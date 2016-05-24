@@ -1,0 +1,21 @@
+{
+  "name": "tap",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "description": "A typescript implementation of Ruby's tap method",
+  "main": "build/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "mocha specs",
+    "preinstall": "tsc"
+  },
+  "author": "Maex Software",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.1",
+    "typescript": "^1.8.10"
+  }
+}
