@@ -1,9 +1,5 @@
 /// <reference path="../typings/main.d.ts" />
 
-declare interface Object {
-  tap<T> (fn: (t: T) => void): T
-}
-
 /**
  * Tap in to a method call chain, call function and continue call chain
  * @memberof Object

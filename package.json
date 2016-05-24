@@ -1,5 +1,5 @@
 {
-  "name": "tap",
+  "name": "@maexsoftware/tap",
   "version": "0.1.0",
   "engines": {
     "node": ">=6.0.0"
@@ -10,9 +10,13 @@
     "tsc": "tsc",
     "pretest": "tsc",
     "test": "mocha build/test",
-    "preinstall": "tsc"
+    "preinstall": "tsc && cp ./typings/tap.d.ts ./build/tap.d.ts"
   },
   "author": "Maex Software",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maexsoftware/tap.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
