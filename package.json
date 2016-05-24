@@ -5,17 +5,20 @@
     "node": ">=6.0.0"
   },
   "description": "A typescript implementation of Ruby's tap method",
-  "main": "build/index.js",
+  "main": "build/build.js",
   "scripts": {
     "tsc": "tsc",
-    "test": "mocha specs",
+    "pretest": "tsc",
+    "test": "mocha build/test",
     "preinstall": "tsc"
   },
   "author": "Maex Software",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^2.10.2",
     "mocha": "^2.5.1",
+    "tsd": "^0.6.5",
     "typescript": "^1.8.10"
   }
 }
