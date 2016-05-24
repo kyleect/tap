@@ -1,1 +1,0 @@
-{"version":3,"file":"ChainableClass.js","sourceRoot":"","sources":["../../../test/support/ChainableClass.ts"],"names":[],"mappings":";AAAA;IAAA;QACU,UAAK,GAAU,CAAC,CAAC;IAU3B,CAAC;IARQ,GAAG,CAAE,KAAY;QACtB,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;QACnB,MAAM,CAAC,IAAI,CAAC;IACd,CAAC;IAEM,GAAG;QACR,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC;IACpB,CAAC;AACH,CAAC;AAXD;gCAWC,CAAA"}
