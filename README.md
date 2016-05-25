@@ -1,5 +1,7 @@
 # Tap
 
+[![Build Status](https://travis-ci.org/maexsoftware/tap.svg?branch=master)](https://travis-ci.org/maexsoftware/tap)
+
 A typescript implementation of Ruby's tap.
 
 ## Arrays
