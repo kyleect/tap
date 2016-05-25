@@ -6,12 +6,14 @@
   },
   "description": "A typescript implementation of Ruby's tap method",
   "main": "build/build.js",
+  "typings": "build/tap.d.ts",
   "scripts": {
-    "clean-build": "rm -rf ./build",
-    "tsc": "tsc",
-    "pretest": "npm run clean-build && tsc",
+    "prebuild": "rm -rf ./build",
+    "build": "tsc",
+    "postbuild": "cp ./typings/tap.d.ts ./build/tap.d.ts",
+    "pretest": "npm run build",
     "test": "mocha build/test",
-    "preinstall": "npm run clean-build && tsc && cp ./typings/tap.d.ts ./build/tap.d.ts"
+    "preinstall": "npm run build"
   },
   "author": "Maex Software",
   "repository": {
