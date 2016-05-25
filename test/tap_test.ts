@@ -18,8 +18,20 @@ describe('Object.prototype.tap<T>(() => T): T', function () {
       testClass
         .set(1)
         .set(2)
-        .tap<ChainableClass>(obj => obj.set(5))
+        .tap<ChainableClass>(obj => 10)
         .get()
     ).to.equal(2);
+  });
+  
+  it('throws exception if object is modified in tap function', function () {
+    const testClass = new ChainableClass();
+    
+    expect(() => {
+      testClass
+        .set(1)
+        .set(2)
+        .tap<ChainableClass>(obj => obj.set(5))
+        .get();
+    }).to.throw(`Cannot assign to read only property 'value' of object '#<ChainableClass>'`);
   });
 });

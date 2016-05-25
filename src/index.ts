@@ -8,6 +8,7 @@
  */
 Object.prototype.tap = function tap<T> (fn: (t: T) => void): T {
   const clone: T = Object.assign({ __proto__: this.__proto__ }, this);
-  fn.call(null, clone);
+  const froze: T = Object.freeze(clone);
+  fn.call(null, froze);
   return this;
 };
