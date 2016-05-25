@@ -6,7 +6,7 @@ import ChainableClass from './support/ChainableClass';
 
 const { expect } = require('chai');
 
-describe('Object.prototype.tap<T>(() => T): T', function () {
+describe('Object.prototype.tap<T>((value: T) => void): T', function () {
   it('is defined', function () {
     expect(Object.prototype.tap).to.be.a('function');
   });
