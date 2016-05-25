@@ -7,7 +7,7 @@ declare interface String {
 }
 
 declare interface Array<T> {
-  tap (fn: (t: T) => void): T
+  tap (fn: (t: T[]) => void): T[]
 }
 
 declare interface Number {
