@@ -4,48 +4,45 @@
 
 A typescript implementation of Ruby's tap.
 
-## Arrays
-```ts
-[1,2,3].tap(a => [4,5,6]) === [1,2,3]
-```
+## Usage
 
-## Strings
+If you want to get started right away then you can extend `TappableClass`. This
+will give you a basic implementation of the tap method.
 
 ```ts
-"test".tap(s => "changed") === "test"
-```
-
-## Numbers
-
-```typescript
-(100).tap(n => 0) === 100
-```
-
-## Objects
-
-```ts
-export default class ChainableClass {
-  private value:number = 0;
-  
-  public set (value:number):ChainableClass {
-    this.value = value;
-    return this;
-  }
+class BasicExampleClass extends TappableClass {
+  public value:number = 0;
   
   public get ():number {
     return this.value;
   }
+  
+  public set (value:number):this {
+    this.value = value;
+    return this;
+  }
 }
 
-const testClass = new ChainableClass();
+const example = new BasicExampleClass();
 
-testClass
-  .set(1)
-  .set(2)
-  .tap<ChainableClass>(obj => 10)
-  .get() === 2
+example
+  .set(10)
+  .set(20)
+  .tap(value => console.log(value)) // 20
+  .set(30)
+  .get(); // 30
 ```
 
-## Immutability
+If you want more control over the tap method implementation for your class then
+you can simply implement `ITappableClass` with your own implementation.
 
-Values can not be modified from the function passed in to tap. For objects and arrays it will throw an error if mutation is attempted.
+```ts
+class ExampleClass implements ITappableClass {
+  tap (fn: (value: this) => void): this {
+    const clone:this = Object.assign({ __proto__: Object.getPrototypeOf(this) }, this);
+    const froze:this = Object.freeze(clone);
+    fn.call(null, froze);
+    return this;
+  }
+}
+```
